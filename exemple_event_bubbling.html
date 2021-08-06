@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exemple simple DOM</title>
+        <script>
+            window.onload = function() {
+                function show_alert(number) {
+                    alert("I am div " + number)
+                }
+                const div1 = document.querySelector('#div1');
+                const div2 = document.querySelector('#div2');
+                div1.addEventListener('click', function(event){ show_alert("1"); }, true);
+                div2.addEventListener('click', function(event){ show_alert("2"); }, true);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div1" style="width: 150; height: 150px; background-color: aqua;">
+            <div id="div2" style="width: 100px; height: 100px; background-color:black;"></div>
+        </div>        
+    </body>
+</html>
