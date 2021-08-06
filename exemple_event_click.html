@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exemple simple DOM</title>
+        <style>
+            img {
+                border: solid red 1px;
+            }
+        </style>
+        <script>
+            function fixerLargeur(largeur) {
+                document.getElementById("img1").style.borderWidth = largeur + "px";
+            }
+
+            window.onload = function () {
+                const boutonAgrandir = document.querySelector('#boutonAgrandir');
+                const boutonReduire = document.querySelector('#boutonReduire');
+                boutonAgrandir.addEventListener('click', function(event){ fixerLargeur(20); }, false);
+                boutonReduire.addEventListener('click', function(event){ fixerLargeur(5); }, false);
+            }
+
+        </script>
+    </head>
+    <body>
+        <p><img id="img1" src="logoPoly.png" width="480" height="240" alt="logo Poly"></p>
+        <form name="UnFormulaire">
+            <input id="boutonAgrandir" type="button" value="Agrandir la bordure à 20px" />
+            <input id="boutonReduire" type="button" value="Réduire la bordure à 5px" />
+        </form>          
+    </body>
+</html>
