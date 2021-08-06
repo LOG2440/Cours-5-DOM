@@ -3,21 +3,35 @@
     <head>
         <meta charset="utf-8">
         <title>Exemple simple DOM</title>
-        <script>
-            window.onload = function() {
-                function show_alert(number) {
-                    alert("I am div " + number)
-                }
-                const div1 = document.querySelector('#div1');
-                const div2 = document.querySelector('#div2');
-                div1.addEventListener('click', function(event){ show_alert("1"); }, true);
-                div2.addEventListener('click', function(event){ show_alert("2"); }, true);
+        <style>
+            table { 
+                border: 1px solid red;
+                font-size: xx-large;
             }
+            #col1 { background-color: pink; }
+
+        </style>
+        <script>
+            function gestionnaire(e) {
+                col2 = document.getElementById("col2");
+                col2.innerHTML = "Allo";
+                e.stopPropagation();
+                alert("Propagation de l'événement interrompue");
+            }
+
+            window.onload = function () {
+                elem = document.getElementById("ligne1");
+                elem.addEventListener("click" ,gestionnaire, false);
+                elem = document.getElementById("tableau");
+                elem.addEventListener("click",function(e) {alert('Coucou!');}, false);
+            }
+
         </script>
     </head>
     <body>
-        <div id="div1" style="width: 150px; height: 150px; background-color: aqua;">
-            <div id="div2" style="width: 100px; height: 100px; background-color:black;"></div>
-        </div>        
+        <table id="tableau">
+            <tr id="ligne1"><td id="col1">CLIQUEZ ICI</td></tr>
+            <tr id="ligne2"><td id="col2">CLIQUEZ ICI AUSSI</td></tr>
+        </table> 
     </body>
 </html>
