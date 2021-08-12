@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exemple simple DOM</title>
+    <script>
+      window.onload = function () {
+        paragraphes = document.getElementsByTagName("p");
+        // paragraphes = document.querySelectorAll("p");
+        alert(paragraphes.length);
+        nouveauParagraphe = document.createElement("p");
+        nouveauParagraphe.textContent = "Dernier paragraphe";
+        document.body.appendChild(nouveauParagraphe);
+        alert(paragraphes.length);
+      };
+    </script>
+  </head>
+  <body>
+    <p>Premier paragraphe</p>
+    <p>Deuxième paragraphe</p>
+    <p>Troisième paragraphe</p>
+  </body>
+</html>
