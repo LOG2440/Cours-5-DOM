@@ -1,8 +1,8 @@
 <!doctype html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>Exemple simple DOM</title>
+        <title>Exemple de propagation</title>
         <style>
             table { 
                 border: 1px solid red;
@@ -16,12 +16,14 @@
                 col2 = document.getElementById("col2");
                 col2.innerHTML = "Allo";
                 e.stopPropagation();
+                // e.stopImmediatePropagation();
                 alert("Propagation de l'événement interrompue");
             }
 
             window.onload = function () {
-                elem = document.getElementById("ligne1");
+                let elem = document.getElementById("ligne1");
                 elem.addEventListener("click" ,gestionnaire, false);
+                // elem.addEventListener("click", () => alert("2e evenement de click!"), false);
                 elem = document.getElementById("tableau");
                 elem.addEventListener("click",function(e) {alert('Coucou!');}, false);
             }
