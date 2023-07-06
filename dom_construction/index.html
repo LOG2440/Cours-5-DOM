@@ -1,0 +1,17 @@
+<html>
+
+<head>
+    <title>Exemple minimaliste de modification du DOM</title>
+    <script>
+        window.onload = function () {
+            const heading = document.createElement("h1");
+            const heading_text = document.createTextNode("Grand titre");
+            heading.appendChild(heading_text);
+            document.body.appendChild(heading);
+        }
+    </script>
+</head>
+
+<body></body>
+
+</html>

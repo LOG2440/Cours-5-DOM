@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet">
+  <script src="script.js" type=module defer></script>
+  <title>Messagerie</title>
+</head>
+
+<body>
+  <main>
+    <button id="server-send">Émuler un message</button>
+    <div id="parent">
+      <div id="messages">
+        <div class="message self" id="message-1">
+          <div class="message-info">
+            <span class="username">Michel: </span>
+            <span class="text">Voici un message de moi</span>
+          </div>
+          <p class="message-time">13:32</p>
+        </div>
+        <div class="message other" id="message-2">
+          <div class="message-info">
+            <span class="username">Marie: </span>
+            <span class="text">Voici un message d'une autre personne</span>
+          </div>
+          <p class="message-time">13:33</p>
+        </div>
+      </div>
+      <div id="message-box">
+        <input type="text" id="message-input" placeholder="Aa">
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
