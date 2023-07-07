@@ -6,22 +6,22 @@
     <title>La boucle d'événements du navigateur</title>
     <script>
         function gestionnaire() {
-            setTimeout(show_alert, 3000)
-            clicking()
+            setTimeout(show_alert, 3000);
+            clicking();
         }
 
         function show_alert() {
-            alert("This is an alert!")
+            alert("This is an alert!");
         }
 
         function clicking() {
-            alert("The clicker was clicked")
+            alert("The clicker was clicked");
         }
 
         window.onload = function () {
-            show_alert()
+            show_alert();
             const bouton = document.querySelector('#clicker');
-            bouton.addEventListener('click', function (event) { gestionnaire(); });
+            bouton.addEventListener('click', () => gestionnaire());
         }
 
     </script>
