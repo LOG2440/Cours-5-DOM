@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>La boucle d'événements du navigateur</title>
+    <script>
+        function gestionnaire() {
+            setTimeout(show_alert, 3000)
+            clicking()
+        }
+
+        function show_alert() {
+            alert("This is an alert!")
+        }
+
+        function clicking() {
+            alert("The clicker was clicked")
+        }
+
+        window.onload = function () {
+            show_alert()
+            const bouton = document.querySelector('#clicker');
+            bouton.addEventListener('click', function (event) { gestionnaire(); });
+        }
+
+    </script>
+</head>
+
+<body>
+    <button id="clicker">Appuyez ici</button>
+</body>
+
+</html>
