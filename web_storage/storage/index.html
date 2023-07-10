@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Exemple de Local et Session Storage</title>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <fieldset>
+    <legend>Stockage local</legend>
+    <label for="localData"> Ceci sera persistant:</label>
+    <input id="localData" type="text" />
+  </fieldset>
+  <fieldset>
+    <legend>Stockage de session</legend>
+    <label for="sessionData"> Ceci sera conservé durant la session:</label>
+    <input id="sessionData" type="text" />
+  </fieldset>
+  <div>
+    <button onclick="saveData()">Sauvegarder</button>
+    <button onclick="loadData()">Récupérer</button>
+    <button onclick="resetData()">Tout vider</button>
+  </div>
+</body>
+
+</html>

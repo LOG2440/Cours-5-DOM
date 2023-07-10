@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="profile_loader.js" defer></script>
+    <style>
+        #error {
+            color: red;
+            display: none;
+        }
+
+        #profile-card {
+            display: flex;
+            gap: 10px;
+            border: 1px solid black;
+            width: 300px;
+            border-radius: 5px;
+            margin-top: 20px;
+            padding: 5px;
+        }
+
+        #profile-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+    </style>
+    <title>Page de Profil</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="./index.html">Page Principale</a>
+            <a href="./profile.html">Page de Profil</a>
+        </nav>
+    </header>
+    <main>
+        <h1 id="error">Aucun profil disponible. Veuillez créer un <a href="./index.html">ici!</a></h1>
+        <div id="profile-card">
+            <img id="avatar" width="80px" height="80x">
+            <section id="profile-info">
+                <p id="profile-name">NAME</p>
+                <p id="profile-email">EMAIL</p>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>
