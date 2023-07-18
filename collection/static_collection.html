@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Exemple de conteneurs d'éléments</title>
+  <script>
+    window.onload = function () {
+      // Collection "statique"
+      paragraphes = document.querySelectorAll("p");
+      alert(paragraphes.length);
+      const nouveauParagraphe = document.createElement("p");
+      nouveauParagraphe.textContent = "Dernier paragraphe";
+      document.body.appendChild(nouveauParagraphe);
+      alert(paragraphes.length);
+    };
+  </script>
+</head>
+
+<body>
+  <p>Premier paragraphe</p>
+  <p>Deuxième paragraphe</p>
+  <p>Troisième paragraphe</p>
+</body>
+
+</html>

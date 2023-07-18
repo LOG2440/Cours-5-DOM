@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="profile_creator.js" defer></script>
+  <style>
+    #info {
+      width: 200px;
+      gap: 5px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    #image {
+      align-self: center;
+    }
+  </style>
+  <title>Générateur de profils</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="./index.html">Page Principale</a>
+      <a href="./profile.html">Page de Profil </a>
+    </nav>
+  </header>
+  <main>
+    <form id="form" autocomplete="off">
+      <fieldset id="info">
+        <legend>Création de profil</legend>
+        <label>Nom: <input id="name" autocomplete="off" required></label>
+        <label>Courriel: <input id="email" type="email" autocomplete="off" required></label>
+        <button id="generate" type="button" title="1 fois par seconde">Générer un avatar</button>
+        <img width="80px" height="80px" id="image">
+        <button id="submit" type="submit">Créer le profil</button>
+      </fieldset>
+    </form>
+  </main>
+</body>
+
+</html>

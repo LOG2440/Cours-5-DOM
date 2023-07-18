@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Exemple de propagation</title>
+    <style>
+        table {
+            border: 1px solid red;
+            font-size: xx-large;
+        }
+
+        #cell1 {
+            background-color: lightblue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            const table = document.getElementById("tableau");
+            table.addEventListener("click", () => alert('Clic sur le tableau!'));
+
+            const line1 = document.getElementById("ligne1");
+            line1.addEventListener("click", (event) => {
+                const cell2 = document.getElementById("cell2");
+                cell2.textContent = "Allo";
+                event.stopPropagation();
+                // Pourra bloquer le 2e événement de click
+                // event.stopImmediatePropagation();
+                alert("Propagation de l'événement interrompue");
+            });
+            line1.addEventListener("click", () => alert("2e evenement de click! sur la ligne"));
+        }
+    </script>
+</head>
+
+<body>
+    <table id="tableau">
+        <thead>
+            <th>Exemple de bubbling</th>
+        </thead>
+        <tbody>
+            <tr id="ligne1">
+                <td id="cell1">CELLULE #1</td>
+            </tr>
+            <tr id="ligne2">
+                <td id="cell2">CELLULE #2</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
