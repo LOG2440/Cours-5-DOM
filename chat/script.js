@@ -85,18 +85,18 @@ messageContainer.addEventListener("click", (event) => {
     }
 });
 
+const copyToInput = function (event) {
+    // Prévenir l'affichage du menu contextuel avec bouton droit
+    event.preventDefault();
+
+    // readText est asynchrone et on doit attendre la fin de son exécution
+    window.navigator.clipboard.readText().
+        then(text => this.value = text);
+};
+
 /// Ajout et retrait des gestionnaires dynamique
 document.getElementById("copy-checkbox").addEventListener('change', (event) => {
     const messageInput = document.getElementById("message-input");
-
-    const copyToInput = function (event) {
-        // Prévenir l'affichage du menu contextuel avec bouton droit
-        event.preventDefault();
-
-        // readText est asynchrone et on doit attendre la fin de son exécution
-        window.navigator.clipboard.readText().
-            then(text => this.value = text);
-    };
     if (event.target.checked) {
         messageInput.addEventListener('contextmenu', copyToInput);
     }
