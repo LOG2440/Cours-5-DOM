@@ -26,18 +26,28 @@ Ils existent 2 types de collections : "vivantes" et "statiques".
 
 ### Collection vivante
 
-Une collection vivante, comme celle retournée par la fonction `getElementsByTagName` est un collection dont le contenu peut changer en fonction de l'état du DOM après sa création. Par exemple, rajouter un élément avec la balise `<p>` après la création d'une collection avec `getElementsByTagName(p)` ajouterai cet élément dans la collection automatiquement. Consultez le fichier [live_collection.html](./collection/live_collection.html) pour un exemple concret.
+Une collection vivante, comme celle retournée par la fonction `getElementsByTagName` est un collection dont le contenu peut changer en fonction de l'état du DOM après sa création.
+
+Par exemple, rajouter un élément avec la balise `<p>` après la création d'une collection avec `getElementsByTagName(p)` ajouterai cet élément dans la collection automatiquement.
+
+Consultez le fichier [live_collection.html](./collection/live_collection.html) pour un exemple concret.
 
 ### Collection statique
 
-Une collection statique, comme celle retournée par la fonction `querySelectorAll` est un collection dont le contenu ne change pas en fonction de l'état du DOM après sa création. Par exemple, rajouter un élément avec la balise `<p>` après la création d'une collection avec `querySelectorAll(p)` n'ajouterai pas cet élément dans la collection automatiquement. Consultez le fichier [static_collection.html](./collection/static_collection.html) pour un exemple concret.
+Une collection statique, comme celle retournée par la fonction `querySelectorAll` est un collection dont le contenu ne change pas en fonction de l'état du DOM après sa création.
+
+Par exemple, rajouter un élément avec la balise `<p>` après la création d'une collection avec `querySelectorAll(p)` n'ajouterai pas cet élément dans la collection automatiquement.
+
+Consultez le fichier [static_collection.html](./collection/static_collection.html) pour un exemple concret.
 
 
 ## Propriété `dataset`
 
 Il est possible d'attacher des propriétés personnalisées à un élément HTML à travers des propriétés dont le nom commence par `data-`. Ces propriétés sont accessibles dans le code JS à travers la propriété `dataset` de l'élément du DOM.
 
-Les propriétés du dataset peuvent être utilisées pour contenir des informations supplémentaires sur un élément dans le HTML directement. Consultez les fichiers [index.html](./dataset/index.html) et [script.js](./dataset/script.js) pour un exemple concret.
+Les propriétés du dataset peuvent être utilisées pour contenir des informations supplémentaires sur un élément dans le HTML directement.
+
+Consultez les fichiers [index.html](./dataset/index.html) et [script.js](./dataset/script.js) pour un exemple concret.
 
 
 ## Gestion des événements 
@@ -46,7 +56,7 @@ Il est possible de "réagir" à certains événements de l'utilisateur sur la pa
 
 L'ajout d'un événement peut se faire de plusieurs manières, notamment :
 - ajout du code JS directement dans le HTML (déconseillé)
-- associer le code à une fonction `onX` où `X` est le nom de l'événement
+- associer le code à une fonction `onX` où `X` est le nom de l'événement. Ex : `onclick`
 - utiliser la méthode `addEventListener(event,handler)` où `event` est le nom de l'événement et `handler` la fonction qui gère l'événement
 
 La fonction de gestion peut recevoir un objet de type `Event` et qui contient des attributs différents en fonction du type d'événement. Ex : un `KeyboardEvent` contient l'attribut `key` qui indique la touche utilisée.
@@ -63,7 +73,9 @@ Consultez le fichier [bubbling.html](./events/bubbling.html) pour un exemple con
 
 ## Boucle d'événements
 
-La détection des événements et l'appel des fonctions de rappel dépendent de la boucle d'événements (_event loop_) du navigateur. Consultez le fichier [index.html](./event_loop/index.html) pour un exemple concret.
+La détection des événements et l'appel des fonctions de rappel dépendent de la boucle d'événements (_event loop_) du navigateur.
+
+Consultez le fichier [index.html](./event_loop/index.html) pour un exemple concret.
 
 Les vidéos suivantes sont des bonnes références détaillées sur le sujet :
 -[What the heck is the event loop anyway? | Philip Roberts | JSConf EU](https://www.youtube.com/watch?v=8aGhZQkoFbQ&t=749s)
@@ -75,4 +87,6 @@ Le répertoire [chat](./chat/) contient un exemple récapitulatif des différent
 
 # Web Storage API
 
-Web Storage est un API du navigateur connexe au DOM sans nécessairement manipuler la structure d'une page qui permet de sauvegarder et charger des données pour un domaine spécifique. Consultez le fichier [README](./web_storage/README.MD) du répertoire [web_storage](./web_storage/) pour plus d'informations et les exemples de code.
+Web Storage est un API du navigateur connexe au DOM sans nécessairement manipuler la structure d'une page qui permet de sauvegarder et charger des données pour un domaine spécifique.
+
+Consultez le fichier [README](./web_storage/README.MD) du répertoire [web_storage](./web_storage/) pour plus d'informations et les exemples de code.

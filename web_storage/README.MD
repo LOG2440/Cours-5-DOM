@@ -14,7 +14,7 @@ Dans le cas de `Local Storage`, les informations sont sauvegardées de manière 
 
 ## Sauvegarde et récupération de l'information
 
-Une donnée peut être sauvegardé dans l'espace de stockage à travers la fonction `setItem(key,value)` et récupérée à travers `getItem(key)`. Chaque type contient son propre ensemble d'informations sauvegardées.
+Une donnée peut être sauvegardée dans l'espace de stockage à travers la fonction `setItem(key,value)` et récupérée à travers `getItem(key)`. Chaque type contient son propre ensemble d'informations sauvegardées.
 
 La valeur de `key` doit être la même pour la sauvegrade et la récupération et elle est sensible à la case. À noter que la valeur de retour de `getItem(key)` pour une `key` inexistante est `null`.
 
@@ -43,7 +43,7 @@ Le répertoire [storage](./storage/) contient un exemple de l'utilisation de l'A
 
 La page [index.html](./storage/index.html) contient 2 champs de saisie. Il est possible de sauvegarder leurs valeurs à travers le bouton `Sauvegarder`. 
 
-Il est possible de récupérer les valeurs sauvegardées et les placers dans les champs à travers le bouton `Récupérer`. Si la page a été simplement rafraichie, les 2 informations seront encore là. Si elle a été fermée complétement et accédée à nouveau, seulement le stockage local sera encore présent.
+Il est possible de récupérer les valeurs sauvegardées et les placer dans les champs à travers le bouton `Récupérer`. Si la page a été simplement rafraichie, les 2 informations seront encore là. Si elle a été fermée complétement et accédée à nouveau, seulement le stockage local sera encore présent.
 
 Finalement, il est possible de vider les 2 espaces de stockage à travers le bouton `Tout vider`.
 
@@ -51,7 +51,7 @@ Finalement, il est possible de vider les 2 espaces de stockage à travers le bou
 
 Le répertoire [page_share](./page_share/) contient un exemple de l'utilisation de l'API pour partager des données entre plusieurs pages du même domaine.
 
-La page [index.html](./page_share/index.html) contient un formulaire de création de profil utilisateur. Une fois les 2 champs obligatoires (nom et courriel) remplis,vous pouvez soumettre le formulaire et les informations du profil seront sauvegardées dans `localStorage`.
+La page [index.html](./page_share/index.html) contient un formulaire de création de profil utilisateur. Une fois les 2 champs obligatoires (nom et courriel) remplis, vous pouvez soumettre le formulaire et les informations du profil seront sauvegardées dans `localStorage`.
 
 La page [profile.html](./page_share/profile.html) contient les informations du profil généré récupérées à partir du `localStorage`. S'il n'y a aucune donnée disponible, la page affiche un message de redirection vers la page principale et cache l'affichage du profil.
 

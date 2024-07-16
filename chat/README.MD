@@ -38,7 +38,7 @@ Chaque message se fait assigner un `id` unique qui est généré en fonction du 
 
 ### Événement du clavier
 
-Le code attache un gestionnaire de l'événement `keydown` au champs de saisie pour les message. Ce gestionnaire vérifie si la touche appuyée est `Enter` et, si c'est le cas, génère un nouveau message qui contient le contenu du champs de saisie comme texte.
+Le code attache un gestionnaire de l'événement `keydown` au champs de saisie pour les messages. Ce gestionnaire vérifie si la touche appuyée est `Enter` et, si c'est le cas, génère un nouveau message qui contient le contenu du champs de saisie comme texte.
 
 Cet événement se produit à chaque touche appuyée lorsque le champs de saisie possède le focus de la page. Il est également possible d'implémenter le même fonctionnement avec l'événement [input](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) ou [change](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). À noter que `change` est lancé si l'élément perd le focus également.
 

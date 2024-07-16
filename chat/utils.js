@@ -1,4 +1,4 @@
-// Phrases et noms générés par ChatGPI
+// Phrases et noms générés par ChatGPT
 const names = ['Olivia', 'Michel', 'Marie', 'Louis', 'Joel'];
 const randomText = [
     "Qu'est-ce que JavaScript ?",
