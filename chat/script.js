@@ -1,4 +1,13 @@
 import { getRandomName, getRandomText, defaultMessages } from "./utils.js";
+import { MentionEvent } from "./mentionEvent.js";
+import { chatBus, NotificationHandler, ConsoleHandler } from "./chat.js";
+
+document.addEventListener('mention',
+    (e) => console.log(`${e.username}: ${e.text}`)
+);
+
+new ConsoleHandler(chatBus).subscribe();
+new NotificationHandler(chatBus).subscribe();
 
 const messageContainer = document.getElementById("messages");
 
@@ -34,6 +43,11 @@ function addMessage(message, source) {
     messageContainer.appendChild(parent);
     // ramener la barre de défilement en bas à chaque message
     messageContainer.scrollTop = messageContainer.scrollHeight;
+
+    if (message.text.includes('@tous')) {
+        document.dispatchEvent(new MentionEvent(message.username, message.text));
+        chatBus.dispatchEvent(new MentionEvent(message.username, message.text));
+    }
 }
 
 /**

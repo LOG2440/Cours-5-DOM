@@ -89,3 +89,33 @@ event.preventDefault();
 ```
 
 Ce bloquage a lieu seulement si le gestionnaire de l'événement est ajouté sur le champs de saisie. Voir la section [retrait d'un événement](#retrait-dun-événement) pour plus d'informations.
+
+## Événements personnalisés
+
+Il est possible de créer des événements personnalisés dans le DOM à travers une classe qui implémente l'interface `Event`. Dans cet exemple, un événement `mention` est créé et déclenché lorsqu'un message contient la mention `@tous`.
+
+```js
+if (message.text.includes('@tous')) {
+    document.dispatchEvent(new MentionEvent(message.username, message.text));
+    chatBus.dispatchEvent(new MentionEvent(message.username, message.text));
+}
+```
+
+Un événement peut être géré par n'importe quel objet qui implémente l'interface `EventTarget` : les éléments du DOM ou bien une classe qui implémente cette interface. Dans cet exemple, l'événement est géré par `Document` ainsi que par la classe `ChatBus` qui est un objet global de l'application.
+
+```js
+class ChatBus extends EventTarget { }
+...
+document.addEventListener(
+    'mention', 
+    e => console.log(`${e.username}: ${e.text}`)
+);
+```
+
+Cette approche est un exemple du patron de conception `Observer` qui permet de découpler les producteurs d'événements des consommateurs d'événements.
+
+## Patron Pub-Sub
+
+Le patron Pub-Sub (Publish-Subscribe) est un patron de conception qui permet de découpler les producteurs d'événements (publishers) des consommateurs d'événements (subscribers). Dans cet exemple, la classe `ChatBus` agit comme un bus de communication pour les événements personnalisés.
+
+Chaque fois qu'un message contenant la mention `@tous` est généré, un événement `mention` est publié sur le bus de communication. Les classes `NotificationHandler` et `ConsoleHandler` s'abonnent à cet événement et réagissent en conséquence. Ceci permet également de mettre en exemple le patron de conception `Strategy` pour la gestion des événements.
